@@ -72,7 +72,6 @@ class FileStorage:
     def get(self, cls, id):
         """"Method to retrive object"""
         all_class = self.all(cls)
-
         for mobj in all_class.values():
             if id == str(mobj.id):
                 return mobj
