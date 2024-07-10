@@ -65,10 +65,6 @@ class FileStorage:
             if key in self.__objects:
                 del self.__objects[key]
 
-    def close(self):
-        """call reload() method for deserializing the JSON file to objects"""
-        self.reload()
-
     def get(self, cls, id):
         """"Method to retrive object"""
         all_class = self.all(cls)
@@ -79,3 +75,7 @@ class FileStorage:
     def count(self, cls=None):
         """"count the number of objectss"""
         return len(self.all(cls))
+
+    def close(self):
+        """call reload() method for deserializing the JSON file to objects"""
+        self.reload()
